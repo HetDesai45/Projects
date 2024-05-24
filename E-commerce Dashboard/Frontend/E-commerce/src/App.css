@@ -1,0 +1,49 @@
+body{
+  margin: 0;
+}
+
+.navbar{
+  background-color: gray;
+  margin: 0;
+  padding: 15px;
+}
+
+.container .navbar li{
+  display: inline-block;
+}
+
+.navbar li a{
+  text-decoration: none;
+  padding: 15px;
+  color: black;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background-color: gray;
+}
+
+.signup h1{
+  margin-left: 47%;
+}
+.signup form{
+  margin-left: 40%;
+}
+
+.signup form input{
+  padding: 7px;
+  width: 300px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.signup form button{
+  padding: 7px;
+  width: 100px;
+  border: 1px solid;
+  border-radius: 10px;
+  margin-left: 120px;
+}
