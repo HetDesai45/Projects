@@ -26,21 +26,21 @@ body{
   background-color: gray;
 }
 
-.signup h1{
+.register h1{
   margin-left: 47%;
 }
-.signup form{
+.register form{
   margin-left: 40%;
 }
 
-.signup form input{
+.register form input{
   padding: 7px;
   width: 300px;
   border: 1px solid;
   border-radius: 10px;
 }
 
-.signup form button{
+.register form button{
   padding: 7px;
   width: 100px;
   border: 1px solid;

@@ -11,6 +11,7 @@ function App() {
     <BrowserRouter>
       <Nav />
       <Routes>
+        <Route path='/' element={<>Hello</>} />
         <Route path='/signup' element={<Signup/>} />
       </Routes>
       <Footer/>
