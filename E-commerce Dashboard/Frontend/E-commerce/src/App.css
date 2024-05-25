@@ -47,3 +47,25 @@ body{
   border-radius: 10px;
   margin-left: 120px;
 }
+
+.login h1{
+  margin-left: 47%;
+}
+.login form{
+  margin-left: 40%;
+}
+
+.login form input{
+  padding: 7px;
+  width: 300px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.login form button{
+  padding: 7px;
+  width: 100px;
+  border: 1px solid;
+  border-radius: 10px;
+  margin-left: 120px;
+}
