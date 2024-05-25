@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const Signup = () => {
@@ -6,6 +6,14 @@ const Signup = () => {
   const [password, setPass] = useState("");
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const auth = localStorage.getItem("user");
+    if (auth) {
+      navigate("/");
+    }
+  });
+
   const signupuser = async (event) => {
     event.preventDefault();
     try {
@@ -18,8 +26,8 @@ const Signup = () => {
           },
         }
       );
-      console.log(result.data);
-      if (result.data.success) {
+      localStorage.setItem("user", JSON.stringify(result));
+      if (result) {
         navigate("/");
       }
     } catch (error) {
@@ -63,9 +71,7 @@ const Signup = () => {
         />
         <br />
         <br />
-        <button type="submit">
-          Signup
-        </button>
+        <button type="submit">Signup</button>
       </form>
     </div>
   );

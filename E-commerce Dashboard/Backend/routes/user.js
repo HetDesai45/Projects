@@ -10,11 +10,7 @@ router.post("/signup", async (req, res) => {
     email,
     password,
   });
-  if (result) {
-    return res.json({ success: true });
-  } else {
-    return res.json({ success: false });
-  }
+  return res.send(result);
 });
 
 module.exports = router;
