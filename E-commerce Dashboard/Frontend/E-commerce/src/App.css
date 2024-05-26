@@ -5,17 +5,20 @@ body{
 .navbar{
   background-color: gray;
   margin: 0;
-  padding: 15px;
+  padding: 25px;
+  text-align: right;
 }
 
 .container .navbar li{
   display: inline-block;
+  
 }
 
 .navbar li a{
   text-decoration: none;
   padding: 15px;
   color: black;
+  font-size: 20px;
 }
 
 .footer{
@@ -68,4 +71,9 @@ body{
   border: 1px solid;
   border-radius: 10px;
   margin-left: 120px;
+}
+
+.logo{
+  float: left;
+  border-radius: 50px;
 }

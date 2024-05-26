@@ -12,7 +12,7 @@ const Signup = () => {
     if (auth) {
       navigate("/");
     }
-  });
+  },[navigate]);
 
   const signupuser = async (event) => {
     event.preventDefault();
@@ -26,12 +26,14 @@ const Signup = () => {
           },
         }
       );
-      localStorage.setItem("user", JSON.stringify(result));
-      if (result) {
+      
+      if (result.data) {
+        localStorage.setItem("user", JSON.stringify(result.data));
         navigate("/");
       }
     } catch (error) {
       console.log(error);
+      alert("Something went wrong please try again later");
     }
   };
   return (

@@ -6,15 +6,16 @@ const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
-  useEffect(()=>{
+  useEffect(() => {
     const auth = localStorage.getItem("user");
-    if(auth){
-      navigate('/');
+    if (auth) {
+      navigate("/");
     }
-  })
-  const loginuser = async () => {
+  }, [navigate]);
+  const loginuser = async (event) => {
+    event.preventDefault();
     try {
-      let result = await axios.post(
+      const result = await axios.post(
         "http://localhost:5000/user/login",
         { email, password },
         {
@@ -23,17 +24,15 @@ const Login = () => {
           },
         }
       );
-
-      localStorage.setItem("user", JSON.stringify(result));
-      result = await JSON.stringify(result);
-      result = await result.JSON();
-      if (result.name) {
+      if (result.data) {
+        localStorage.setItem("user", JSON.stringify(result.data));
         navigate("/");
-      }else{
-        alert("Please Enter Correct details")
+      } else {
+        alert("Please Enter Correct details");
       }
     } catch (error) {
       console.log(error);
+      alert("An error occurred while logging in. Please try again.");
     }
   };
   return (

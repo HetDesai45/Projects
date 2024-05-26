@@ -12,20 +12,24 @@ router.post("/signup", async (req, res) => {
   });
   result = result.toObject();
   delete result.password;
-  return res.send(result);
+  if(result){
+    return res.send(result);
+  }else{
+    return res.send("");
+  }
 });
 
-router.post("/login",async(req,res)=>{
-  if(req.body.password && req.body.email){
+router.post("/login", async (req, res) => {
+  if (req.body.password && req.body.email) {
     const result = await user.findOne(req.body).select("-password");
-    if(result){
+    if (result) {
       res.send(result);
     }else{
-      res.send({Error:"No user found"})
+      res.send("");
     }
   }else{
-    res.send({Error:"No user found"})
+    res.send("");
   }
-})
+});
 
 module.exports = router;
